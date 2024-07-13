@@ -1,6 +1,6 @@
 {
-    "title": "Twitter Profile",
-    "description": "Notarize ownership of a twitter profile",
+    "title": "Prove KOL data",
+    "description": "Notarize ownership of a twitter profile and engagement on a tweet",
     "steps": [
         {
             "title": "Visit Twitter website",
@@ -11,12 +11,24 @@
             "title": "Collect credentials",
             "description": "Login to your account if you haven't already",
             "cta": "Check cookies",
-            "action": "two"
+            "action": "query_account"
         },
         {
             "title": "Notarize twitter profile",
             "cta": "Notarize",
-            "action": "three",
+            "action": "notarize_account",
+            "prover": true
+        },
+        {
+            "title": "Get tweet data",
+            "description": "Open your tweet",
+            "cta": "Check tweet",
+            "action": "query_tweet"
+        },
+        {
+            "title": "Notarize tweet data",
+            "cta": "Notarize",
+            "action": "notarize_tweet",
             "prover": true
         }
     ],
@@ -25,14 +37,20 @@
         "notarize"
     ],
     "cookies": [
-        "api.x.com"
+        "api.x.com",
+        "x.com"
     ],
     "headers": [
-        "api.x.com"
+        "api.x.com",
+        "x.com"
     ],
     "requests": [
         {
             "url": "https://api.x.com/1.1/account/settings.json",
+            "method": "GET"
+        },
+        {
+            "url": "https://x.com/i/api/graphql/QVo2zKMcLZjXABtcYpi0mA/TweetDetail*",
             "method": "GET"
         }
     ]
