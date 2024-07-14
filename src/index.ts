@@ -193,10 +193,15 @@ export function query_tweet() {
   });
 }
 
+export function parse_tweet() {
+  outputJSON([]);
+}
+
 export function notarize_tweet() {
   const params = JSON.parse(Host.inputString());
   const id = notarize({
     ...params,
+    getSecretResponse: "parse_tweet",
   });
   outputJSON(id);
 }

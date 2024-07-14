@@ -5,6 +5,7 @@ declare module "main" {
   export function parse_account(): I32;
   export function notarize_account(): I32;
   export function query_tweet(): I32;
+  export function parse_tweet(): I32;
   export function notarize_tweet(): I32;
   export function config(): I32;
 }
